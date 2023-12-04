@@ -1,4 +1,4 @@
-import fs from 'fs';
+import input from './input';
 const numMap = {
     'one': 1,
     'two': 2,
@@ -19,7 +19,6 @@ export const getPartV2 = (part) => {
     const nums = part.match(/(one|two|three|four|five|six|seven|eight|nine)|\d/g);
     return Number(`${normaliseNum(nums[0])}${normaliseNum(nums[nums.length - 1])}`);
 }
-const input = fs.readFileSync( __dirname+'/input.txt' , 'utf-8');
 const lines = input.split('\n');
 
 const total = lines.reduce((acc, line) => {
